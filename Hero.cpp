@@ -11,6 +11,7 @@ Hero::~Hero()
 {
 }
 
+// Getters
 string Hero::getName() const
 {
     return heroName;
@@ -40,7 +41,7 @@ void Hero::takeDamage(int damage)
 
 bool Hero::operator>(const Hero &other) const // Operator overloading
 {
-    if (basePower > other.basePower)
+    if (basePower > other.basePower) // Check if base power of current hero is greater than other hero
     {
         return true;
     }
@@ -52,5 +53,5 @@ bool Hero::operator>(const Hero &other) const // Operator overloading
 
 int Hero::operator+(const Hero &other) const // Operator overloading
 {
-    return health + other.health;
+    return health + other.health; // Return sum of healths
 }

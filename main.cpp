@@ -43,9 +43,6 @@ void createWarrior(Guild &guild)
     guild += heroList[heroCount];
     heroCount++;
     cout << name << " added to guild!" << endl;
-    cout << "Effective HP: "
-         << static_cast<Warrior *>(heroList[heroCount - 1])->calculateEffectiveHealth()
-         << endl;
 }
 
 void createKnight(Guild &guild)
@@ -66,9 +63,6 @@ void createKnight(Guild &guild)
     guild += heroList[heroCount];
     heroCount++;
     cout << name << " added to guild!" << endl;
-    cout << "Burst Damage: "
-         << static_cast<Knight *>(heroList[heroCount - 1])->calculateBurstDamage()
-         << endl;
 }
 
 void createMage()
@@ -124,8 +118,7 @@ void compareHeroes()
         cout << "Invalid index!" << endl;
         return;
     }
-    cout << "Is " << heroList[a]->getName() << " stronger than "
-         << heroList[b]->getName() << "? ";
+    cout << "Is " << heroList[a]->getName() << " stronger than " << heroList[b]->getName() << "? ";
     cout << ((*heroList[a] > *heroList[b]) ? "YES" : "NO") << endl;
     cout << "Combined vitality: " << (*heroList[a] + *heroList[b]) << " HP" << endl;
 }
@@ -148,8 +141,7 @@ void dealDamage()
     cout << "Enter damage amount: ";
     cin >> damage;
     heroList[index]->takeDamage(damage);
-    cout << heroList[index]->getName()
-         << " HP is now: " << heroList[index]->getHealth() << endl;
+    cout << heroList[index]->getName() << " HP is now: " << heroList[index]->getHealth() << endl;
 }
 
 int main()
